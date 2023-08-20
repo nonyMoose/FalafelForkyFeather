@@ -16,13 +16,18 @@ O - Ban nation
 K - Eject region
 R - Confirm WA join
 F - Move to region in current tab
-B - Move to suspicious
+B - Move to jp
 E - Apply/resign to/from WA
 Z - Go to current region page
 X - Copy current nation URL to clipboard
 D - Appoint yourself as RO/Dismiss other ROs
+P - Pin dispatch
 Up arrow - Upvote a dispatch
 Down arrow - Downvote a dispatch
 ===============================
 CHANGELOG:
-1.0.1 Added upvoting and downvoting, mostly as a test
+1.0.1 
+    Added upvoting and downvoting, mostly as a test
+1.2.0 
+    Added the ability to add a dispatch to be pinned, and pin dispatches in general.
+    Added the ability to specify JP.

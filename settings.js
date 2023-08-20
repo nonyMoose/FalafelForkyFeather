@@ -10,9 +10,11 @@ function saveOptions(e) {
 
 function restoreOptions() {
   function setCurrentChoice(result) {
-	document.querySelector("#ro").value = result.ro || "Supreme Overlord";
-	document.querySelector("#gov").value = result.gov || "Maintain A";
-	document.querySelector("#suc").value = result.suc || "Task Failed Successorly";
+	document.querySelector("#ro").value = result.ro || "Falafel";
+	document.querySelector("#gov").value = result.gov || "Praise the Overseer!";
+	document.querySelector("#suc").value = result.suc || "Raider Unity";
+  document.querySelector("#jp").value = result.jp || "Suspicious";
+  document.querySelector("#disp").value = result.disp || "212206";
   }
 
   function onError(error) {

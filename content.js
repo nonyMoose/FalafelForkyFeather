@@ -15,6 +15,8 @@
 let rotitle = localStorage.getItem("yfrotitle") || "falafel";
 let suctitle = localStorage.getItem("yfsuctitle") || "Raider Unity";
 let govtitle = localStorage.getItem("yfgovtitle") || "Praise the Overseer!";
+let rotitle = localStorage.getItem("yjptitle") || "Suspiscious";
+let disptitle = localStorage.getItem("ydisptitle") || "212206"
 
 
 function loadSettings(settings) { 
@@ -42,6 +44,16 @@ function loadSettings(settings) {
 		suctitle = settings.suc;
 		localStorage.setItem("yfsuctitle",settings.suc);
 	}
+
+	if (settings.jp) { 
+		suctitle = settings.jp;
+		localStorage.setItem("yfjptitle",settings.jp);
+	}
+
+	if (settings.disp) { 
+		suctitle = settings.disp;
+		localStorage.setItem("yfsuctitle",settings.disp);
+	}
 }
 
 function settingsFailed(error) { 
@@ -53,7 +65,8 @@ function settingsFailed(error) {
 	let rotitle = localStorage.getItem("yfrotitle") || "falafel";
 	let suctitle = localStorage.getItem("yfsuctitle") || "Raider Unity";
 	let govtitle = localStorage.getItem("yfgovtitle") || "Praise the Overseer!";
-
+	let jptitle = localStorage.getItem("yfjptitle") || "Suspiscious";
+	let disptitle = localStorage.getItem("yfdisptitle") || "212206"
 	//let rotitle = "Supreme Overlord";
 	//let suctitle = "Task Failed Successorly";
 	//let govtitle = "Maintain A";
@@ -130,11 +143,11 @@ document.addEventListener('keyup', function (event) { // keyup may seem less int
 					document.getElementsByName('move_region')[0].click();
 				}
 				break;
-			case 'KeyB': // move to suspicious
-				if (window.location.href == "https://www.nationstates.net/region=suspicious") {
+			case 'KeyB': // move to jp
+				if (window.location.href == "https://www.nationstates.net/region="+jptitle) {
 					document.getElementsByName('move_region')[0].click();
 				} else {
-					window.location.assign("https://www.nationstates.net/region=suspicious");
+					window.location.assign("https://www.nationstates.net/region="+jptitle);
 				}
 				break;
 			case 'KeyE': // resign from WA, courtesy of NotAName
@@ -347,6 +360,15 @@ document.addEventListener('keyup', function (event) { // keyup may seem less int
 			case 'ArrowDown': // downvote dispatch
 				if (window.location.href.includes("dispatch=")) {
 					document.getElementsByName('downflag')[0].click();
+				}
+				break;
+
+			case 'KeyP': // pin dispatch
+				if (window.location.href.includes("dispatch=")){
+					document.getElementsByClassName("button icon add")[0].click();
+				}
+				else {
+					window.location.assign("https://www.nationstates.net/page=dispatch/dispatch="+disptitle)
 				}
 				break;
 		} // end switch
