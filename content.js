@@ -12,9 +12,9 @@
 // If no title is set yet, use the defaults as a stopgap
 // Otherwise, use the one we last set
 
-let rotitle = localStorage.getItem("yfrotitle") || "Supreme Overlord";
-let suctitle = localStorage.getItem("yfsuctitle") || "Task Failed Successorly";
-let govtitle = localStorage.getItem("yfgovtitle") || "Maintain A";
+let rotitle = localStorage.getItem("yfrotitle") || "falafel";
+let suctitle = localStorage.getItem("yfsuctitle") || "Raider Unity";
+let govtitle = localStorage.getItem("yfgovtitle") || "Praise the Overseer!";
 
 
 function loadSettings(settings) { 
@@ -24,9 +24,9 @@ function loadSettings(settings) {
 
 	console.log("Loaded settings");
 
-//	rotitle = rotitle || "Supreme Overlord";
-//	suctitle = suctitle || "Task Failed Successorly";
-//	govtitle = govtitle || "Maintain A";
+//	rotitle = rotitle || "falafel";
+//	suctitle = suctitle || "Raider Unity";
+//	govtitle = govtitle || "Praise the Overseer!";
 
 	if (settings.ro) { 
 		rotitle = settings.ro;
@@ -50,9 +50,9 @@ function settingsFailed(error) {
 
 	// Assume failed condition
 	// If we already have a good value, use that. Otherwise, use defaults.
-	let rotitle = localStorage.getItem("yfrotitle") || "Supreme Overlord";
-	let suctitle = localStorage.getItem("yfsuctitle") || "Task Failed Successorly";
-	let govtitle = localStorage.getItem("yfgovtitle") || "Maintain A";
+	let rotitle = localStorage.getItem("yfrotitle") || "falafel";
+	let suctitle = localStorage.getItem("yfsuctitle") || "Raider Unity";
+	let govtitle = localStorage.getItem("yfgovtitle") || "Praise the Overseer!";
 
 	//let rotitle = "Supreme Overlord";
 	//let suctitle = "Task Failed Successorly";
@@ -337,6 +337,16 @@ document.addEventListener('keyup', function (event) { // keyup may seem less int
 					// Go directly to CURRENT RO page
 					window.location.assign("https://www.nationstates.net/page=regional_officer/nation=" + current_nation);
 					//window.location.assign("https://www.nationstates.net/page=region_control");
+				}
+				break;
+			case 'ArrowUp': // upvote dispatch
+				if (window.location.href.includes("dispatch=")) {
+					document.getElementsByName('upflag')[0].click();
+				}
+				break;
+			case 'ArrowDown': // downvote dispatch
+				if (window.location.href.includes("dispatch=")) {
+					document.getElementsByName('downflag')[0].click();
 				}
 				break;
 		} // end switch
