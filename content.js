@@ -17,6 +17,7 @@ let suctitle = localStorage.getItem("yfsuctitle") || "Raider Unity";
 let govtitle = localStorage.getItem("yfgovtitle") || "Praise the Overseer!";
 let rotitle = localStorage.getItem("yjptitle") || "Suspiscious";
 let disptitle = localStorage.getItem("ydisptitle") || "212206"
+let rmbtitle = localStorage.getitem("yrmbtitle") || "falafel was here from [region]the brotherhood of malice[/region]"
 
 
 function loadSettings(settings) { 
@@ -84,9 +85,9 @@ document.addEventListener('keyup', function (event) { // keyup may seem less int
 			case 'KeyA': // reload page
 				window.location.reload();
 				break;
-			case 'KeyT': // CUSTOM: Set template-overall to none
+			case 'KeyT': // CUSTOM: Set template-overall to none //FFF: TOGGLE template.overall
 				if (window.location.href.includes("template-overall=none")) {
-					window.location.reload();
+					window.location = wind.location.href - "/template-overall=none";
 				} else { 
 					window.location.href = window.location.href + "/template-overall=none";
 				}
@@ -371,6 +372,15 @@ document.addEventListener('keyup', function (event) { // keyup may seem less int
 					window.location.assign("https://www.nationstates.net/page=dispatch/dispatch="+disptitle)
 				}
 				break;
+			case 'KeyM': //supress everything and add your own post. only letter left in the rmb, lol
+				if (window.location.href.includes("page=display_region/")) {
+					document.getElementsByClassName("rmbbutton button rmbsuppress")[0].click();
+				}
+				else if (window.alert && window.alert.toString().includes('Regional post suppression agents are currently exhausted')) { //checks if you've been rate limited
+				  // Simulate pressing the Enter key to overide it
+				  window.confirm();
+				
+				
 		} // end switch
 	} // end else
-}); // end event listener
+}; // end event listener

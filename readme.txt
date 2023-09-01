@@ -31,3 +31,5 @@ CHANGELOG:
 1.2.0 
     Added the ability to add a dispatch to be pinned, and pin dispatches in general.
     Added the ability to specify JP.
+1.3.0
+    Henson-ified the process, allowed you to supress posts and add your own rmb post. Working on adding the ability to add the WFE and tags.

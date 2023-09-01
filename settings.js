@@ -5,6 +5,9 @@ function saveOptions(e) {
   	ro: document.querySelector("#ro").value,
   	gov: document.querySelector("#gov").value,
   	suc: document.querySelector("#suc").value,
+    jp: document.querySelector("#jp").value,
+    disp: document.querySelector("#disp").value, 
+    rmb: document.querySelector("#rmb").value,
   });
 }
 
@@ -15,6 +18,7 @@ function restoreOptions() {
 	document.querySelector("#suc").value = result.suc || "Raider Unity";
   document.querySelector("#jp").value = result.jp || "Suspicious";
   document.querySelector("#disp").value = result.disp || "212206";
+  document.querySelector("#rmb").value = result.rmb || "falafel was here from [region]the brotherhood of malice[/region]";
   }
 
   function onError(error) {
